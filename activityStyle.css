@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px rgb(79, 81, 81);
+    width: 100%;
+}
+
+.logo img {
+    max-width: 180px;
+    margin-right: 3rem;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    margin: 0 25px;
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+    font-family: Algerian;
+    font-weight: 600;
+}
+
+nav.right-nav .logout {
+    opacity: 100%;
+}
+
+nav a:hover {
+    color: darkgreen;
+    text-shadow: 0 0 5px white;
+    transition: all 0.5s ease;
+}
+
+nav.left-nav {
+    flex: 1;
+}
+
+nav.right-nav {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+    
+    .logo {
+        flex: 1 100%;
+        text-align: center;
+    }
+    
+    nav.left-nav, nav.right-nav {
+        flex: 1 100%;
+        justify-content: center;
+    }
+    
+    nav a {
+        margin: 10px;
+    }
+}
+
+.actStart {
+    margin-top: 5px;
+    background-image: url(./images/activity/actStart.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #333;
+    height: 5em;
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-shadow: #333;
+    font-size: 5em;
+    font-family: "Titan One", sans-serif;
+    font-weight: 400;
+    line-height: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.joinAct, .createAct {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1em;
+    margin: 20px 0;
+    width: 80%;
+}
+
+.event-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+}
+
+.event {
+    border: 1px solid darkgray;
+    border-radius: 10px;
+    padding: 20px 20px;
+    overflow: hidden;
+    width: 65%;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+    transition: transform 0.5s ease, border-color 0.5s ease;
+    margin-bottom: 1em;
+}
+
+.event:hover {
+    border: 5px solid darkgreen;
+    transition: all 0.5s linear infinite;   
+}
+
+.event-info {
+    display: flex;
+    padding: 10px;
+}
+
+.event-info img {
+    width: 65%;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.event-info .info {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.event-info h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.event-info p {
+    margin: 0;
+    font-family: "PT Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 2em;
+}
+
+.event-info p span {
+    font-weight: 600;
+}
+
+.event-info button {
+    margin-top: 10px;
+    width: 100px;
+    padding: 8px 8px;
+    font-family: "PT Sans", sans-serif;
+    font-size: 20px !important;
+    font-weight: 600;
+    background-color: white;
+    color: black !important;
+    border: 2.5px solid black !important;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.event-info button:hover {
+    background-color: black !important;
+    color: white !important;
+}
+
+.event-description {
+    padding: 0px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.event:hover .event-description {
+    max-height: 300px; 
+}
+
+.joinAct h1, .createAct h1 {
+    margin: 1em 0;
+    font-family: Algerian;
+    font-size: 48px;
+    font-weight: 400;
+    color: rgb(30, 125, 30);
+    text-shadow: 2px 2px 5px #333;
+}
+
+.joinAct button, .createAct button {
+    padding: 15px 10px;
+    margin-bottom: 10px !important;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: 2px solid darkgreen;
+    background-color: white;
+    color: darkgreen;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.7);
+    transition: all 0.3s linear;
+}
+
+.joinAct button:hover, .createAct button:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+.createAct form {
+    border: 1px solid black;
+    width: 60%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 2em;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    background-color: rgb(126, 141, 125);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.7);
+}
+
+.createAct table {
+    width: 100%;  /* Ensure the table takes full width */
+    margin: 0 auto;  /* Center the table */
+}
+
+.createAct td {
+    padding: 10px 0;  /* Add padding for better spacing */
+    margin: 5px 0;
+}
+
+.createAct .colName {
+    width: 15%;
+    text-align: start;
+    color: white;
+    font-weight: 600;
+    text-shadow: 10px 10px -10px #fff;
+}
+
+.createAct .colInput {
+    height: 3em;
+    width: 90%;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 3px rgba(0,0,0,0.7);
+}
+
+.myAct-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+}
+
+.myAct {
+    border: 1px solid darkgray;
+    border-radius: 10px;
+    padding: 20px 20px;
+    overflow: hidden;
+    width: 65%;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+    transition: transform 0.5s ease, border-color 0.5s ease;
+    margin-bottom: 1em;
+}
+
+.myAct:hover {
+    border: 5px solid darkgreen;
+    transition: all 0.5s linear infinite;   
+}
+
+.myAct-info {
+    display: flex;
+    padding: 10px;
+}
+
+.myAct-info img {
+    width: 65%;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.myAct-info .ma-info {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.myAct-info h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.myAct-info p {
+    margin: 0;
+    font-family: "PT Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 2em;
+}
+
+.myAct-info p span {
+    font-weight: 600;
+}
+
+.updateButton {
+    margin-top: 10px;
+    padding: 1em 5px;
+    margin-right: 10px;
+    text-align: center;
+    font-family: "PT Sans", sans-serif;
+    font-size: 16px !important;
+    font-weight: 600;
+    background-color: white;
+    color: darkblue !important;
+    border: 2.5px solid darkblue !important;
+    border-radius: 10px;
+    cursor: pointer;
+    float: left;
+}
+
+.updateButton:hover {
+    background-color: darkblue !important;
+    color: white !important;
+}
+
+.deleteButton {
+    margin-top: 10px;
+    padding: 1em 5px;
+    text-align: center;
+    font-family: "PT Sans", sans-serif;
+    font-size: 16px !important;
+    font-weight: 600;
+    background-color: white;
+    color: darkred !important;
+    border: 2.5px solid darkred !important;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+}
+
+.deleteButton:hover {
+    background-color: darkred !important;
+    color: white !important;
+}
+
+.myAct-description {
+    padding: 0px 20px;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.myAct:hover .myAct-description {
+    max-height: 300px; 
+}
